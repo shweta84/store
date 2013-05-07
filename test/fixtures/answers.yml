@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  option: MyString
+  is_true: false
+
+two:
+  option: MyString
+  is_true: false
