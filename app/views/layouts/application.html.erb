@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Store</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%#= render "devise/links" %>
+<%#= raise resource_name.inspect %>
+<%#= raise current_user.inspect %>
+<% unless current_user %>
+    <%= link_to "Sign in", new_user_session_path %>
+    <%= link_to "Sign up", new_user_registration_path %>
+<% end %>
+
+<%= "Hi #{current_user.fname.camelcase} #{current_user.lname.camelcase} (#{current_user.role.name.camelcase})," if current_user %>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete if current_user %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<%= yield %>
+
+</body>
+</html>
